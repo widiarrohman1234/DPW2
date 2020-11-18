@@ -9,7 +9,7 @@
 					Tambah Data Produk
 				</div>
 				<div class="card-body">
-					<form action="{{url('produk', $produk->id)}}" method="post">
+					<form action="{{url('admin/produk', $produk->id)}}" method="post">
 						@csrf
 						@method("PUT")
 					<div class="form-group">
@@ -42,7 +42,7 @@
 						<label for="" class="control-label">Deskripsi</label>
 						<textarea name="deskripsi" class="form-control">{{$produk->deskripsi}}</textarea>
 					</div>
-					<button class="btn btn-dark float-right"><i class="fa fa-save"></i> Simpan</button>
+					<button type="sumbit" class="btn btn-dark float-right"><i class="fa fa-save"></i> Simpan</button>
 					</form>
 				</div>
 			</div>
