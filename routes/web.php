@@ -50,13 +50,14 @@ Route::prefix('admin')->middleware('auth')->group(function(){
 			// Route::put('user/{user}', [UserController::class, 'update']);
 			// Route::delete('user/{user}', [UserController::class, 'destroy']);
 });
-
+	//registration admin
+Route::get('registration', [AuthController::class, 'showRegistration']);
+Route::post('registration', [AuthController::class, 'storeRegistration']);
 
     //login Admin
 Route::get('loginAdmin', [AuthController::class, 'showLoginAdmin'])->name('login');
 Route::post('loginAdmin', [AuthController::class, 'loginProcess']);
 Route::get('logout', [AuthController::class, 'logout']);
-Route::get('registration', [AuthController::class, 'registration']);
 
 Route::get('/login', function () {
     return view('login');

@@ -24,8 +24,20 @@ class AuthController extends Controller
 		return redirect('loginAdmin');
 	}
 
-	function registration(){
-		return view('registration');
+	function showRegistration(){
+		return view('indexRegistration');
+	}
+
+	function storeRegistration(){
+		$user = new User;
+		$user->nama_user = request('nama_user');
+		$user->username = request('username');
+		$user->email = request('email');
+		$user->password = bcrypt(request('password'));
+		$user->save();
+
+		return redirect('loginAdmin')->with('success','Data Berhasil Ditambahkan');
+		//dd(request()->all());
 	}
 
 	function forgotPassword(){
