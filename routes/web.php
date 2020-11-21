@@ -28,9 +28,18 @@ Route::get('promo', [HomeController::class, 'showPromo']);
 
 //produk user controller
 Route::get('/', [ClientProdukController::class, 'home']);
+Route::get('filter', [ClientProdukController::class, 'filter']);
+Route::get('about', [ClientProdukController::class, 'about']);
+Route::get('blog', [ClientProdukController::class, 'blog']);
+Route::get('contact', [ClientProdukController::class, 'contact']);
 Route::get('produk_single/{produk}', [ClientProdukController::class, 'show']);
 
+Route::get('/produk_single', function () {
+    return view('produk_single');
+});
+
 Route::prefix('admin')->middleware('auth')->group(function(){
+			Route::post('produk/filter', [ProdukController::class, 'filter']);
 		//produk admin controller
 			Route::resource('produk', ProdukController::class);
 			// Route::get('produk', [ProdukController::class, 'index']);
@@ -63,18 +72,4 @@ Route::get('/login', function () {
     return view('login');
 });
 
-Route::get('/about', function () {
-    return view('about');
-});
 
-Route::get('/blog', function () {
-    return view('blog');
-});
-
-Route::get('/contact', function () {
-    return view('contact');
-});
-
-Route::get('/produk_single', function () {
-    return view('produk_single');
-});

@@ -1,6 +1,24 @@
 @extends('customer.template.baseUser')
 
 @section('content')
+
+              <form action="{{('filter')}}" class="search-form" method="get">
+                <div class="form-group">
+                  <span class="icon ion-ios-search"></span>
+                  <input type="input" class="form-control" placeholder="Cari nama produk..." name="nama" value="{{$nama ?? ''}}">
+                </div>
+              </form>
+
+            <div class="sidebar-box ftco-animate">
+              <h3 class="heading">Categories</h3>
+              <ul class="categories">
+                <li><a href="#">Vegetables <span>(12)</span></a></li>
+                <li><a href="#">Fruits <span>(22)</span></a></li>
+                <li><a href="#">Juice <span>(37)</span></a></li>
+                <li><a href="#">Dries <span>(42)</span></a></li>
+              </ul>
+            </div>
+
 			<div class="row">
     					@foreach($list_produk as $data)
     			<div class="col-md-6 col-lg-3 ftco-animate">

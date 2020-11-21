@@ -21,7 +21,7 @@ function checkrouteactive($route){
           <img src="{!! asset('dist/img/user2-160x160.jpg') !!}"class="img-circle elevation-2" alt="User Image">
         </div>
         <div class="info">
-          <a href="{{url('template')}}" class="d-block">
+          <a href="{{url('beranda')}}" class="d-block">
             @if(Auth::check())
               {{request()->user()->nama_user}}
             @else
@@ -72,7 +72,7 @@ function checkrouteactive($route){
             </a>
           </li>
 
-          <li class="nav-item has-treeview menu-open">
+          <li class="nav-item has-treeview ">
             <a href="#" class="nav-link ">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>

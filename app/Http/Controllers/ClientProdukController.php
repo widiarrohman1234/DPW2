@@ -7,11 +7,27 @@ class ClientProdukController extends Controller
 {
 	function home(){
 		$data['list_produk'] = produk::all();
-		return view('home', $data);
+		return view('customer.home', $data);
 	}
 
 	function show(Produk $produk){
 		$data['produk'] = $produk;
-		return view('produk_single', $data);
+		return view('customer.produk_single', $data);
+	}
+	function about(){
+		return view('customer.about');
+	}
+	function blog(){
+		return view('customer.blog');
+	}
+	function contact(){
+		return view('customer.contact');
+	}
+	function filter(){
+		$nama = request('nama');
+		$data['list_produk'] = Produk::where('nama_produk', 'like', "%$nama%")->get();
+		$data['nama'] = $nama;
+		return view('customer.home', $data);
+		//dd(request()->all());
 	}
 }
