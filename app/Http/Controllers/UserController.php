@@ -2,11 +2,18 @@
 
 namespace App\Http\Controllers;
 use App\Models\User;
+use App\Models\UserDetail;
 
 class UserController extends Controller
 {
 	function index(){
-		$data['list_user'] = User::all();
+		//menampilkan semua user
+			//$data['list_user'] = User::all();
+		//menampilkan user yang memiliki produk lebih dari sama dengan  1
+			//$data['list_user'] = User::has('produk', '>=', '1')->get();
+		//hanya menampilkan user yang memiliki produk
+			//$data['list_user'] = User::has('produk')->get();
+		$data['list_user'] = User::withCount('produk')->get();
 		return view('user.index', $data);
 	}
 
@@ -21,6 +28,11 @@ class UserController extends Controller
 		$user->email = request('email');
 		$user->password = bcrypt(request('password'));
 		$user->save();
+
+		$userDetail = new UserDetail;
+		$userDetail->id_user = $user->id;
+		$userDetail->no_handphone = request('no_handphone');
+		$userDetail->save();
 
 		return redirect('admin/user')->with('success','Data Berhasil Ditambahkan');
 		// dd(request()->all());

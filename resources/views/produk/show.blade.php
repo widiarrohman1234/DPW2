@@ -16,7 +16,8 @@
 							<p>
 							Rp.{{number_format($produk->harga)}} |
 							Stok : {{$produk->stok}} |
-							Berat : {{$produk->berat}}
+							Berat : {{$produk->berat}} |
+							Seller : {{$produk->seller->username}}
 							</p>
 							<p>
 								{!! nl2br($produk->deskripsi) !!}

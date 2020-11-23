@@ -17,6 +17,9 @@
 								Email : {{$user->email}}
 							</p>
 							<p>
+								no Handphone : {{$user->detail->no_handphone}}
+							</p>
+							<p>
 								{!! nl2br($user->deskripsi) !!}
 							</p>
 						</tbody>

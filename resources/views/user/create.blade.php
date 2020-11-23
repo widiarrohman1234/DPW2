@@ -31,6 +31,11 @@
 						<input type="password" name="password" class="form-control">
 					</div>
 
+					<div class="form-group">
+						<label for="" class="control-label">No Handphone </label>
+						<input type="text" name="no_handphone" class="form-control">
+					</div>
+
 					<button type="submit" class="btn btn-dark float-right"><i class="fa fa-save"></i> Simpan</button>
 					</form>
 				</div>

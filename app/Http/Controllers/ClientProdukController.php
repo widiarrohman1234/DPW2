@@ -14,6 +14,12 @@ class ClientProdukController extends Controller
 		$data['produk'] = $produk;
 		return view('customer.produk_single', $data);
 	}
+
+	function seller(Produk $produk){
+		$data['list_produk'] = produk::all();
+		return view('customer.seller', $data);
+	}
+
 	function about(){
 		return view('customer.about');
 	}

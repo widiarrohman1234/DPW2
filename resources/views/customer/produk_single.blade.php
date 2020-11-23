@@ -26,6 +26,9 @@
                 <a href="#" class="mr-2" style="color: #000;">Berat : <span style="color: #000;">{{$produk->berat}} mg</span></a>
               </p>
             </div>
+              <p class="text-center">
+                <p style="color: #000;">Seller :  <a href="#"> {{$produk->seller->username}}</a></p>
+              </p>
             <p class="price"><span>Rp. {{number_format($produk->harga)}}</span></p>
             <p>{!! nl2br($produk->deskripsi) !!}
             </p>
@@ -58,9 +61,7 @@
                 </span>
               </div>
               <div class="w-100"></div>
-              <div class="col-md-12">
-                <p style="color: #000;">{{$produk->berat}} mg</p>
-              </div>
+
             </div>
             <p><a href="cart.html" class="btn btn-black py-3 px-5">Add to Cart</a></p>
           </div>

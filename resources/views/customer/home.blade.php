@@ -10,12 +10,11 @@
               </form>
 
             <div class="sidebar-box ftco-animate">
-              <h3 class="heading">Categories</h3>
+              <h3 class="heading">Seller</h3>
               <ul class="categories">
-                <li><a href="#">Vegetables <span>(12)</span></a></li>
-                <li><a href="#">Fruits <span>(22)</span></a></li>
-                <li><a href="#">Juice <span>(37)</span></a></li>
-                <li><a href="#">Dries <span>(42)</span></a></li>
+                <li><a href="#">super_user<span>(2)</span></a></li>
+                <li><a href="{{url('seller')}}">penjual 1 <span>(3)</span></a></li>
+                <li><a href="#">penjual 2 <span>(4)</span></a></li>
               </ul>
             </div>
 
@@ -34,7 +33,7 @@
 		    						<p class="price">
 		    							<span class="price-sale">Rp. {{number_format($data->harga)}}</span>
 		    							| Stok : {{$data->stok}} <br>
-		    							Berat : {{$data->berat}}
+		    							Berat : {{$data->berat}} | Seller : {{$data->seller->username}}
 		    						</p>
 		    					</div>
 	    					</div>

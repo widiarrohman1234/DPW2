@@ -28,6 +28,7 @@ Route::get('promo', [HomeController::class, 'showPromo']);
 
 //produk user controller
 Route::get('/', [ClientProdukController::class, 'home']);
+Route::get('seller', [ClientProdukController::class, 'seller']);
 Route::get('filter', [ClientProdukController::class, 'filter']);
 Route::get('about', [ClientProdukController::class, 'about']);
 Route::get('blog', [ClientProdukController::class, 'blog']);
