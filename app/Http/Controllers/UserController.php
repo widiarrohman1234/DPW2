@@ -58,7 +58,7 @@ class UserController extends Controller
 		return redirect('admin/user')->with('success','Data Berhasil Diubah');
 	}
 
-	function destroy(user $user){
+	function destroy(User $user){
 		$user->delete();
 		return redirect('admin/user')->with('danger','Data Berhasil Dihapus');
 	}
