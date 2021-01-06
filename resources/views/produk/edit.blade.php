@@ -9,7 +9,7 @@
 					Tambah Data Produk
 				</div>
 				<div class="card-body">
-					<form action="{{url('admin/produk', $produk->id)}}" method="post">
+					<form action="{{url('admin/produk', $produk->id)}}" method="post" enctype="multipart/form-data">
 						@csrf
 						@method("PUT")
 					<div class="form-group">
@@ -18,7 +18,13 @@
 					</div>
 
 					<div class="row">
-						<div class="col-md-6">
+						<div class="col-md-3">
+							<div class="form-group">
+								<label for="" class="control-label">Foto</label>
+								<input type="file" class="form-control" name="foto" value="{{$produk->foto}}">
+							</div>
+						</div>
+						<div class="col-md-3">
 							<div class="form-group">
 								<label for="" class="control-label">Harga</label>
 								<input type="text" class="form-control" name="harga" value="{{$produk->harga}}">
