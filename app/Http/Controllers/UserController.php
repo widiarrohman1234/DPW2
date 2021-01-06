@@ -23,10 +23,11 @@ class UserController extends Controller
 
 	function store(){
 		$user = new User;
-		$user->nama_user = request('nama_user');
 		$user->username = request('username');
 		$user->email = request('email');
-		$user->password = bcrypt(request('password'));
+		$user->nama_user = request('nama_user');
+		$user->jenis_kelamin = request('jenis_kelamin');
+		$user->password = request('password');
 		$user->save();
 
 		$userDetail = new UserDetail;
@@ -49,10 +50,11 @@ class UserController extends Controller
 	}
 
 	function update(User $user){
-		$user->nama_user = request('nama_user');
 		$user->username = request('username');
 		$user->email = request('email');
-		if(request('password')) $user->password = bcrypt(request('password'));
+		$user->nama_user = request('nama_user');
+		$user->jenis_kelamin = request('jenis_kelamin');
+		if(request('password')) $user->password = request('password');
 		$user->save();
 
 		return redirect('admin/user')->with('success','Data Berhasil Diubah');

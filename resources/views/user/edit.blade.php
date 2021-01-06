@@ -23,6 +23,16 @@
 					</div>
 
 					<div class="form-group">
+						<label for="" class="control-label">Jenis Kelamin </label>
+						<select class="form-control" name="jenis_kelamin">
+							<option value="{{$user->jenis_kelamin}}">{{$user->jenis_kelamin_string}}</option>
+							<option value="1">Laki-laki</option>
+							<option value="2">Perempuan</option>
+						</select>
+					</div>
+
+
+					<div class="form-group">
 						<label for="" class="control-label">Email </label>
 						<input type="text" name="email" class="form-control" value="{{$user->email}}">
 					</div>
@@ -30,11 +40,6 @@
 					<div class="form-group">
 						<label for="" class="control-label">Password </label>
 						<input type="password" name="password" class="form-control">
-					</div>
-
-					<div class="form-group">
-						<label for="" class="control-label">No Handphone </label>
-						<input type="text" name="password" class="form-control">
 					</div>
 
 					<button type="submit" class="btn btn-dark float-right"><i class="fa fa-save"></i> Simpan</button>
