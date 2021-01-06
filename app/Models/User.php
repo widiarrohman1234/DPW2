@@ -21,5 +21,9 @@ class User extends Authenticatable {
     function produk(){
     	return $this->hasMany(produk::class, 'id_user');
     }
+
+    function getJenisKelaminStringAttribute(){
+		return ($this->jenis_kelamin == 1) ? "Laki-laki" : "Perempuan";
+	}
 }
 

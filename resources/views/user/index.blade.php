@@ -16,6 +16,7 @@
 							<th>Aksi</th>
 							<th>Nama</th>
 							<th>username</th>
+							<th>Jenis Kelamin</th>
 							<th>Produk</th>
 							<th>email</th>
 						</thead>
@@ -32,6 +33,7 @@
 							</td>
 							<td>{{$user->nama_user}}</td>
 							<td>{{$user->username}}</td>
+							<td>{{$user->jenis_kelamin_string}}</td>
 							<!-- <td>{{$user->produk->count()}}</td> jika Usercontrollernya $data['list_user'] = User::all(); -->
 							<td>{{$user->produk_count}}</td>
 							<td>{{$user->email}}</td>
