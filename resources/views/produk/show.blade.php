@@ -18,7 +18,8 @@
 							Stok : {{$produk->stok}} |
 							Berat : {{$produk->berat}} |
 							Seller : {{$produk->seller->username}} |
-							Tanggal Produk : {{$produk->tanggal_produksi}}
+							Tanggal Produk : {{$produk->created_at->diffForHumans()}}
+
 							</p>
 							<p>
 								{!! nl2br($produk->deskripsi) !!}
