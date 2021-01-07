@@ -52,8 +52,13 @@ class HomeController extends Controller{
 		$list->each(function($item){
 			echo "$item->nama_produk<br>";
 		});
-		
-		dd($map);
+
+
+		//filter
+		$filtered = $list->filter(function($item){
+			return $item->harga > 50000;
+		});
+		dd($filtered);
 		dd($list_bike, $count_bike);
 		//return view('test-collection',$data);
 	}
