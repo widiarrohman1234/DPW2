@@ -33,9 +33,17 @@ class HomeController extends Controller{
 		$list_bike = ['Honda', 'Yamaha', 'Suzuki', 'KTM', 'BMW', 'Astrea', 'Vespa', 'Kawasaki'];
 		$list_bikes = collect($list_bike);
 		$count_bike = $list_bikes->count();
-		//dd($list_bike, $count_bike);
 		$data['list']  = produk::all();
-		return view('test-collection',$data);
+
+		$list = Produk::all();
+		$map = $list->map(function($item){
+			$result['nama'] = $item->nama_produk;
+			$result['harga'] = $item->harga;
+			return $result;
+		});
+		dd($map);
+		dd($list_bike, $count_bike);
+		//return view('test-collection',$data);
 	}
 
 
