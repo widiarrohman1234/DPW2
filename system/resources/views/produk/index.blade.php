@@ -1,3 +1,4 @@
+@inject('timeService','App\Services\timeServices')
 @extends('template.base')
 
 @section('content')
@@ -6,6 +7,9 @@
 		<div class="col-md-12 mt-5">
 			<div class="card">
 				<div class="card-header">
+						<div class="float-right">
+							waktu : {{$timeService->showTimeNow()}}
+						</div>
 						filter
 				</div>
 				<div class="card-body">
