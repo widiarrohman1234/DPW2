@@ -29,7 +29,12 @@ class HomeController extends Controller{
 		return view('promo');
 	}
 
-
+	function testColletion(){
+		$list_bike = ['Honda', 'Yamaha', 'Suzuki', 'KTM', 'BMW', 'Astrea', 'Vespa', 'Kawasaki'];
+		$list_bikes = collect($list_bike);
+		$count_bike = $list_bikes->count();
+		dd($list_bike, $count_bike);
+	}
 
 
 }

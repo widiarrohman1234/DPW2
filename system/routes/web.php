@@ -73,4 +73,6 @@ Route::get('/login', function () {
     return view('login');
 });
 
+//test
+Route::get('test_colletion', [HomeController::class, 'testColletion']);
 
