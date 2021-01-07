@@ -6,7 +6,7 @@ use App\Models\Produk;
 class ClientProdukController extends Controller
 {
 	function home(){
-		$data['list_produk'] = produk::all();
+		$data['list_produk'] = Produk::paginate(8);
 		return view('customer.home', $data);
 	}
 
@@ -36,4 +36,5 @@ class ClientProdukController extends Controller
 		return view('customer.home', $data);
 		//dd(request()->all());
 	}
+
 }

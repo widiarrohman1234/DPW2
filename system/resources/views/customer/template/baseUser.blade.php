@@ -18,7 +18,7 @@
       <div class="container">
         @include('customer.template.section.menuProduk')
           @yield('content')
-        @include('customer.template.section.pageNumbering')
+        
       </div>
     </section>
 

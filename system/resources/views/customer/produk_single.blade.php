@@ -6,7 +6,7 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-6 mb-5 ftco-animate">
-            <a href="../images/product-{{$produk->id}}.jpg" class="image-popup"><img src="../images/product-{{$produk->id}}.jpg" class="img-fluid" alt="Colorlib Template"></a>
+            <a href="{{ url("system/public/$produk->foto")}}" class="image-popup"><img src="{{ url("system/public/$produk->foto")}}" class="img-fluid" alt="Colorlib Template"></a>
           </div>
           <div class="col-lg-6 product-details pl-md-5 ftco-animate">
             <h3>{{$produk->nama_produk}}</h3>
