@@ -33,7 +33,7 @@
 		    						<p class="price">
 		    							<span class="price-sale">Rp. {{$data->harga}}</span>
 		    							| Stok : {{$data->stok}} <br>
-		    							Berat : {{$data->berat}} | Seller : {{$data->seller->username}}
+		    							Berat : {{$data->berat}} | Seller : 
 		    						</p>
 		    					</div>
 	    					</div>
