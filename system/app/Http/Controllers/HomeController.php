@@ -58,7 +58,10 @@ class HomeController extends Controller{
 		$filtered = $list->filter(function($item){
 			return $item->harga > 50000;
 		});
-		dd($filtered);
+
+		//sum,max,min,avg
+		$sum = $list->avg('harga');
+		dd($sum);
 		dd($list_bike, $count_bike);
 		//return view('test-collection',$data);
 	}
