@@ -21,7 +21,7 @@ class ProdukController extends Controller
 		$produk = new Produk;
 		$produk->id_user = request()->user()->id;
 		$produk->nama_produk = request('nama_produk');
-		// $produk->foto = request('foto');
+		$produk->foto = request('foto');
 		$produk->harga = request('harga');
 		$produk->berat = request('berat');
 		$produk->deskripsi = request('deskripsi');
