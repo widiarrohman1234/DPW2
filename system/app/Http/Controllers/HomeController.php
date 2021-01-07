@@ -35,12 +35,24 @@ class HomeController extends Controller{
 		$count_bike = $list_bikes->count();
 		$data['list']  = produk::all();
 
+		//map
 		$list = Produk::all();
 		$map = $list->map(function($item){
 			$result['nama'] = $item->nama_produk;
 			$result['harga'] = $item->harga;
 			return $result;
 		});
+
+		//each
+		//fungsi each sama dengan perulangan foreach
+		// foreach ($list as $item) {
+		// 	echo "$item->nama_produk<br>";
+		// }
+
+		$list->each(function($item){
+			echo "$item->nama_produk<br>";
+		});
+		
 		dd($map);
 		dd($list_bike, $count_bike);
 		//return view('test-collection',$data);
