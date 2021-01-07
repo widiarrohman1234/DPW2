@@ -16,3 +16,4 @@
 <script>
 	$(".table-datatable").DataTable();
 </script>
+@stack('script')

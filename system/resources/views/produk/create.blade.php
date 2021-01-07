@@ -43,8 +43,8 @@
 					</div>
 
 					<div class="form-group">
-						<label for="" class="control-label">Deskripsi</label>
-						<textarea name="deskripsi" class="form-control"></textarea>
+						<label for=""  class="control-label">Deskripsi</label>
+						<textarea name="deskripsi" id="deskripsi" class="form-control"></textarea>
 					</div>
 
 					<button class="btn btn-dark float-right"><i class="fa fa-save"></i> Simpan</button>
@@ -55,3 +55,16 @@
 	</div>
 </div>
 @endsection
+
+@push('style')
+<link href="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.css" rel="stylesheet">
+@endpush
+
+@push('script')
+<script src="https://cdn.jsdelivr.net/npm/summernote@0.8.18/dist/summernote.min.js"></script>
+<script>
+	$(document).ready(function() {
+	  $('#deskripsi').summernote();
+	});
+</script>
+@endpush
