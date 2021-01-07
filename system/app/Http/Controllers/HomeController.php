@@ -49,9 +49,9 @@ class HomeController extends Controller{
 		// 	echo "$item->nama_produk<br>";
 		// }
 
-		$list->each(function($item){
-			echo "$item->nama_produk<br>";
-		});
+		// $list->each(function($item){
+		// 	echo "$item->nama_produk<br>";
+		// });
 
 
 		//filter
@@ -61,9 +61,14 @@ class HomeController extends Controller{
 
 		//sum,max,min,avg
 		$sum = $list->avg('harga');
-		dd($sum);
-		dd($list_bike, $count_bike);
-		//return view('test-collection',$data);
+		// dd($sum);
+		// dd($list_bike, $count_bike);
+
+		//pagination
+		$data['pagination'] = Produk::simplePaginate(9); /*hanya next dan previos*/
+		$data['pagination'] = Produk::paginate(9); /*ada nomor halaman*/
+
+		return view('test-collection',$data);
 	}
 
 
