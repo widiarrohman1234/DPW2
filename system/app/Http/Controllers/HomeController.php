@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Http\Controllers;
-
+use App\Models\Produk;
 
 class HomeController extends Controller{
 	
@@ -33,7 +33,9 @@ class HomeController extends Controller{
 		$list_bike = ['Honda', 'Yamaha', 'Suzuki', 'KTM', 'BMW', 'Astrea', 'Vespa', 'Kawasaki'];
 		$list_bikes = collect($list_bike);
 		$count_bike = $list_bikes->count();
-		dd($list_bike, $count_bike);
+		//dd($list_bike, $count_bike);
+		$data['list']  = produk::all();
+		return view('test-collection',$data);
 	}
 
 

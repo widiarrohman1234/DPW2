@@ -74,5 +74,5 @@ Route::get('/login', function () {
 });
 
 //test
-Route::get('test_colletion', [HomeController::class, 'testColletion']);
+Route::get('test_collection', [HomeController::class, 'testColletion']);
 
