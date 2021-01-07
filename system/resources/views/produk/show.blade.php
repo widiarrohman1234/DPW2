@@ -16,7 +16,7 @@
 								{!! nl2br($produk->deskripsi) !!}
 							</p>
 							<p>
-								<img src="{{ url("public/$produk->foto") }}" alt="{{$produk->foto}}">
+								<img src="{{ url("system/public/$produk->foto") }}" alt="{{$produk->foto}}">
 							</p>
 						</tbody>
 					</table>

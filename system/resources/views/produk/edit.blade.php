@@ -3,10 +3,17 @@
 @section('content')
 <div class="container">
 	<div class="row">
-		<div class="col-md-12 mt-5">
+		<div class="col-md-3">
+			<div class="card">
+				<div class="card-body">
+					<img src="{{ url("system/public/$produk->foto") }}" alt="{{$produk->foto}}" class="img-fluid">
+				</div>
+			</div>
+		</div>
+		<div class="col-md-9">
 			<div class="card">
 				<div class="card-header">
-					Tambah Data Produk
+					Ubah Data Produk
 				</div>
 				<div class="card-body">
 					<form action="{{url('admin/produk', $produk->id)}}" method="post" enctype="multipart/form-data">

@@ -19,7 +19,7 @@
 						<div class="col-md-3">
 							<div class="form-group">
 								<label for="" class="control-label">Foto</label>
-								<input type="file" name="foto" class="form-control" accept="image/*">
+								<input type="file" name="foto" class="form-control" accept=".png, .jpg, .jpeg">
 							</div>
 						</div>
 						<div class="col-md-3">
