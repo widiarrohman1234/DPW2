@@ -35,10 +35,6 @@ Route::get('blog', [ClientProdukController::class, 'blog']);
 Route::get('contact', [ClientProdukController::class, 'contact']);
 Route::get('produk_single/{produk}', [ClientProdukController::class, 'show']);
 
-Route::get('/produk_single', function () {
-    return view('produk_single');
-});
-
 Route::prefix('admin')->middleware('auth')->group(function(){
 			Route::post('produk/filter', [ProdukController::class, 'filter']);
 		//produk admin controller
@@ -76,4 +72,7 @@ Route::get('/login', function () {
 //test
 Route::get('test_collection', [HomeController::class, 'testColletion']);
 Route::get('test_ajax', [HomeController::class, 'testAjax']);
+
+//cart
+Route::get('cart', [ClientProdukController::class, 'cart']);
 

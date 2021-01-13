@@ -15,4 +15,19 @@
   <script src="{{ url('public/js/google-map.js') }}"></script>
   <script src="{{ url('public/js/main.js') }}"></script>
   <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyBVWaKrjvy3MaE7SQ74_uJiULgl1JY0H2s&sensor=false"></script>
-    
+  <!-- Select2 -->
+<script src="{{ url('public/plugins/select2/js/select2.full.min.js') }}"></script>
+
+<script>
+
+    $(function () {
+      //Initialize Select2 Elements
+      $('.select2').select2()
+
+      //Initialize Select2 Elements
+      $('.select2bs4').select2({
+        theme: 'bootstrap4'
+      })
+    })
+</script>
+@stack('script')

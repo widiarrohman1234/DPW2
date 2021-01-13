@@ -63,7 +63,7 @@
               <div class="w-100"></div>
 
             </div>
-            <p><a href="cart.html" class="btn btn-black py-3 px-5">Add to Cart</a></p>
+            <p><a href="{{url('api/produk',$produk->id)}}" class="btn btn-black py-3 px-5">Keranjang</a></p>
           </div>
         </div>
       </div>

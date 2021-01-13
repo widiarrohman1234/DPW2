@@ -1,7 +1,11 @@
 <?php
 
 namespace App\Http\Controllers;
+use Illuminate\Support\Facades\DB;
 use App\Models\Produk;
+use App\Models\Provinsi;
+use App\Models\Cart;
+
 
 class ClientProdukController extends Controller
 {
@@ -36,5 +40,26 @@ class ClientProdukController extends Controller
 		return view('customer.home', $data);
 		//dd(request()->all());
 	}
+    function cart(){
+		$data['list_cart'] = Cart::all();
+		$data['list_provinsi'] = Provinsi::all();
+		return view('customer.cart', $data);
+	}
 
+	function store(){
+		$produk = new Produk;
+		$produk->id_user = request()->user()->id;
+		$produk->nama_produk = request('nama_produk');
+		$produk->foto = request('foto');
+		$produk->harga = request('harga');
+		$produk->berat = request('berat');
+		$produk->deskripsi = request('deskripsi');
+		$produk->stok = request('stok');
+		$produk->save();
+
+		$produk->hadleUpdloadFoto();
+
+		return redirect('admin/produk')->with('success','Data Berhasil Ditambahkan');
+		// dd(request()->all());
+	}
 }

@@ -20,3 +20,7 @@
     <link rel="stylesheet" type="text/css" href="{{ url('public/css/flaticon.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ url('public/css/icomoon.css')}}">
     <link rel="stylesheet" type="text/css" href="{{ url('public/css/style.css')}}">
+
+        <!-- Select2 -->
+  <link rel="stylesheet" href="{{ url('public/plugins/select2/css/select2.min.css')}}">
+  <link rel="stylesheet" href="{{ url('public/plugins/select2-bootstrap4-theme/select2-bootstrap4.min.css')}}">

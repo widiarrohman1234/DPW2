@@ -3,9 +3,6 @@
 namespace App\Http\Controllers;
 use App\Models\Produk;
 use App\Models\Provinsi;
-use App\Models\Kabupaten;
-use App\Models\Kecamatan;
-use App\Models\Desa;
 
 
 class HomeController extends Controller{

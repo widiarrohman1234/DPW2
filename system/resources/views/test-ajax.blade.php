@@ -51,7 +51,7 @@
 @push('script')
 <script>
 	function gantiProvinsi(id){
-		// alert(id); untuk melihat id Provinsi
+		// alert(id); /*untuk melihat id Provinsi*/
 		$.get("api/provinsi/"+id, function(result){
 			result = JSON.parse(result)
 			option = ""

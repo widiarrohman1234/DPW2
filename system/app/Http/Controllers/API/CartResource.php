@@ -3,11 +3,11 @@
 namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
-use App\Models\Produk;
+use App\Models\Cart;
 
 use Illuminate\Http\Request;
 
-class ProdukResource extends Controller
+class CartResource extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,24 +19,26 @@ class ProdukResource extends Controller
         // $list_produk = Produk::all();
         // return $list_produk->toJson();
             //menampilkan produk
-        return Produk::all();
+        return Cart::all();
     }
 
     public function store()
     {
-        if(request('nama_produk') && request('harga') && request('berat') && request('deskripsi') && request('stok')){
+        if(request('id_user') && request('nama_produk') && request('foto') && request('harga') && request('berat') && request('deskripsi') && request('stok')){
 
-            $produk = new Produk;
-            $produk->nama_produk = request('nama_produk');
-            $produk->harga = request('harga');
-            $produk->berat = request('berat');
-            $produk->deskripsi = request('deskripsi');
-            $produk->stok = request('stok');
-            $produk->save();
+            $cart = new Cart;
+            $cart->id_user = request('id_user');
+            $cart->nama_produk = request('nama_produk');
+            $cart->foto = request('foto');
+            $cart->harga = request('harga');
+            $cart->berat = request('berat');
+            $cart->deskripsi = request('deskripsi');
+            $cart->stok = request('stok');
+            $cart->save();
 
             return collect([
                 'respond' => 200,
-                'data' => $produk
+                'data' => $cart
             ]);
 
         } else {
@@ -49,7 +51,7 @@ class ProdukResource extends Controller
 
     public function show($id)
     {
-        $produk = Produk::find($id);
+        $produk = Cart::find($id);
         if($produk) {
             return collect ([
                 'status' =>200,
@@ -64,7 +66,7 @@ class ProdukResource extends Controller
 
     public function update($id)
     {
-        $produk = Produk::find($id);
+        $produk = Cart::find($id);
         if($produk){
             $produk->nama_produk = request('nama_produk') ?? $produk->nama_produk;
             $produk->harga = request('harga') ?? $produk->nama_produk;
@@ -86,7 +88,7 @@ class ProdukResource extends Controller
 
     public function destroy($id)
     {
-        $produk = Produk::find($id);
+        $produk = Cart::find($id);
         if($produk) {
             $produk->delete($id);
             return collect ([

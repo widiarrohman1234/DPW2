@@ -4,9 +4,11 @@ namespace App\Http\Controllers\API;
 
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
+use App\Models\Produk;
 use App\Models\Kabupaten;
 use App\Models\Kecamatan;
 use App\Models\Desa;
+
 
 class WilayahResource extends Controller
 {
@@ -19,4 +21,5 @@ class WilayahResource extends Controller
     function getDesa($id_kecamatan){
         return Desa::where("id_kecamatan", $id_kecamatan)->get()->toJson();
     }
+
 }
