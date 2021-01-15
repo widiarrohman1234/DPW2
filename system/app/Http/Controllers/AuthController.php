@@ -11,16 +11,34 @@ class AuthController extends Controller
 	}
 
 	function loginProcess(User $user){
-		if(Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
-			return redirect('beranda')->with('success','Login Berhasil, Selamat datang');
+		// if(Auth::attempt(['email' => request('email'), 'password' => request('password')])) {
+		// 	return redirect('beranda')->with('success','Login Berhasil, Selamat datang');
+		// } else {
+		// 	return back()->with('danger', 'Login gagal, Silahkan coba kembali');
+		// }
+
+		if (request('login_as') == 1) {
+			if(Auth::guard('pembeli')->attempt(['email' => request('email'), 'password' => request('password')])){
+				return redirect('beranda/pembeli')->with('success','Login Berhasil, Selamat datang');
+			}else{
+				return back()->with('danger', 'Login gagal, Silahkan coba kembali');
+			}
 		} else {
-			return back()->with('danger', 'Login gagal, Silahkan coba kembali');
+			if(Auth::guard('penjual')->attempt(['email' => request('email'), 'password' => request('password')])){
+				return redirect('beranda/penjual')->with('success','Login Berhasil, Selamat datang');
+			}else{
+				return back()->with('danger', 'Login gagal, Silahkan coba kembali');
+			}
 		}
+		
+
 		//dd(request()->all());
 	}
 
 	function logout(){
 		Auth::logout();
+		Auth::guard('pembeli')->logout();
+		Auth::guard('penjual')->logout();
 		return redirect('loginAdmin');
 	}
 

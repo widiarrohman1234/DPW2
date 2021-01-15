@@ -21,6 +21,8 @@ use App\Http\Controllers\UserController;
 //tampilan admin
     //beranda
 Route::get('beranda', [HomeController::class, 'showBeranda']); //laravel8
+Route::get('beranda/{status}', [HomeController::class, 'showBeranda']); //laravel8
+
         // Route::get('/beranda', 'showBeranda@HomeController']); laravel 7
 Route::get('produk', [HomeController::class, 'showProduk']);
 Route::get('kategori', [HomeController::class, 'showKategori']);

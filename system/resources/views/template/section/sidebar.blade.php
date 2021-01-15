@@ -24,6 +24,12 @@ function checkrouteactive($route){
           <a href="{{url('beranda')}}" class="d-block">
             @if(Auth::check())
               {{request()->user()->nama_user}}
+            @elseif(Auth::guard('pembeli')->check())
+              {{Auth::guard('pembeli')->user()->nama_user}}
+              <br>pembeli
+            @elseif(Auth::guard('penjual')->check())
+              {{Auth::guard('penjual')->user()->nama_user}}
+              <br>penjual
             @else
               Silahkan Login
             @endif
