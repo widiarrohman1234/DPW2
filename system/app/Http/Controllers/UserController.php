@@ -45,7 +45,7 @@ class UserController extends Controller
 
 	function show(User $user){
 		$loggedUser = request()->user();
-		if($loggedUser->id != $user->id) return abort(403);
+		if($loggedUser->id != $user->id) return view('errors.404');
 
 		$data['user'] = $user;
 		return view('user.show', $data);
