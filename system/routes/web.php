@@ -74,7 +74,7 @@ Route::get('/login', function () {
 //test
 Route::get('test_collection', [HomeController::class, 'testColletion']);
 Route::get('test_ajax', [HomeController::class, 'testAjax']);
-
 //cart
 Route::get('cart', [ClientProdukController::class, 'cart']);
+
 
