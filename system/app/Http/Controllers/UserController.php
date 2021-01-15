@@ -1,8 +1,10 @@
 <?php
 
 namespace App\Http\Controllers;
+use App\Http\Requests\UserStoreRequest;
 use App\Models\User;
 use App\Models\UserDetail;
+
 
 class UserController extends Controller
 {
@@ -21,8 +23,10 @@ class UserController extends Controller
 		return view('user.create');
 	}
 
-	function store(){
+	function store(UserStoreRequest $request){
 		$user = new User;
+		$user->level = request('level');
+
 		$user->username = request('username');
 		$user->email = request('email');
 		$user->nama_user = request('nama_user');

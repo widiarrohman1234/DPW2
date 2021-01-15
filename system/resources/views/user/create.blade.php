@@ -9,8 +9,21 @@
 					Tambah Data User
 				</div>
 				<div class="card-body">
+				@if ($errors->any())
+				    <div class="alert alert-danger">
+				        <ul>
+				            @foreach ($errors->all() as $error)
+				                <li>{{ $error }}</li>
+				            @endforeach
+				        </ul>
+				    </div>
+				@endif
 					<form action="{{url('admin/user')}}" method="post">
 						@csrf
+					<div class="form-group">
+						<label for="" class="control-label">Level </label>
+						<input type="text" name="level" class="form-control" value="1" readonly="">
+					</div>
 					<div class="form-group">
 						<label for="" class="control-label">Nama </label>
 						<input type="text" name="nama_user" class="form-control">
