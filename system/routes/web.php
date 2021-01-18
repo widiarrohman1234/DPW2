@@ -24,14 +24,18 @@ Route::get('beranda', [HomeController::class, 'showBeranda']); //laravel8
 Route::get('beranda/{status}', [HomeController::class, 'showBeranda']); //laravel8
 
         // Route::get('/beranda', 'showBeranda@HomeController']); laravel 7
-Route::get('produk', [HomeController::class, 'showProduk']);
+// Route::get('produk', [HomeController::class, 'showProduk']);
 Route::get('kategori', [HomeController::class, 'showKategori']);
 Route::get('promo', [HomeController::class, 'showPromo']);
 
 //produk user controller
 Route::get('/', [ClientProdukController::class, 'home']);
+Route::get('produk', [ClientProdukController::class, 'produk']);
+Route::get('checkout', [ClientProdukController::class, 'checkout']);
+Route::post('checkout', [ClientProdukController::class, 'postcheckout']);
+
+Route::post('filter', [ClientProdukController::class, 'filter']);
 Route::get('seller', [ClientProdukController::class, 'seller']);
-Route::get('filter', [ClientProdukController::class, 'filter']);
 Route::get('about', [ClientProdukController::class, 'about']);
 Route::get('blog', [ClientProdukController::class, 'blog']);
 Route::get('contact', [ClientProdukController::class, 'contact']);

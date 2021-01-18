@@ -24,21 +24,22 @@ class CartResource extends Controller
 
     public function store()
     {
-        if(request('id_user') && request('nama_produk') && request('foto') && request('harga') && request('berat') && request('deskripsi') && request('stok')){
+        if(request('nama_produk') && request('harga') && request('berat') && request('deskripsi') && request('stok')){
 
-            $cart = new Cart;
-            $cart->id_user = request('id_user');
-            $cart->nama_produk = request('nama_produk');
-            $cart->foto = request('foto');
-            $cart->harga = request('harga');
-            $cart->berat = request('berat');
-            $cart->deskripsi = request('deskripsi');
-            $cart->stok = request('stok');
-            $cart->save();
+            $produk = new Cart;
+            $produk->id_user = request('id_user');
+            $produk->nama_produk = request('nama_produk');
+            $produk->harga = request('harga');
+            $produk->foto = request('foto');
+            $produk->berat = request('berat');
+            $produk->deskripsi = request('deskripsi');
+            $produk->stok = request('stok');
+            // dd(request()->all());
+            $produk->save();
 
             return collect([
                 'respond' => 200,
-                'data' => $cart
+                'data' => $produk
             ]);
 
         } else {

@@ -8,6 +8,8 @@
           <div class="col-lg-6 mb-5 ftco-animate">
             <a href="{{ url("system/public/$produk->foto")}}" class="image-popup"><img src="{{ url("system/public/$produk->foto")}}" class="img-fluid" alt="Colorlib Template"></a>
           </div>
+
+          <!-- <form action="{{url('api/cart')}}" method="post" > -->
           <div class="col-lg-6 product-details pl-md-5 ftco-animate">
             <h3>{{$produk->nama_produk}}</h3>
             <div class="rating d-flex">
@@ -64,6 +66,8 @@
 
             </div>
             <p><a href="{{url('api/produk',$produk->id)}}" class="btn btn-black py-3 px-5">Keranjang</a></p>
+            <!-- <button class="btn btn-black">Keranjang</button> -->
+            </form>
           </div>
         </div>
       </div>

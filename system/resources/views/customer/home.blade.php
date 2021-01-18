@@ -2,12 +2,6 @@
 
 @section('content')
 
-              <form action="{{('filter')}}" class="search-form" method="get">
-                <div class="form-group">
-                  <span class="icon ion-ios-search"></span>
-                  <input type="input" class="form-control" placeholder="Cari nama produk..." name="nama" value="{{$nama ?? ''}}">
-                </div>
-              </form>
 
             <div class="sidebar-box ftco-animate">
               <h3 class="heading">Seller</h3>

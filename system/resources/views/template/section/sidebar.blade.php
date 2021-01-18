@@ -10,7 +10,7 @@ function checkrouteactive($route){
     <a href="index3.html" class="brand-link">
       <img src="{{ url('public/dist/img/AdminLTELogo.png') }}" alt="AdminLTE Logo" class="brand-image img-circle elevation-3"
            style="opacity: .8">
-      <span class="brand-text font-weight-light">TOKOPAKWIDI</span>
+      <span class="brand-text font-weight-light">Wida Mantolo</span>
     </a>
 
     <!-- Sidebar -->

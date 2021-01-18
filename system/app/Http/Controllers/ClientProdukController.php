@@ -5,12 +5,14 @@ use Illuminate\Support\Facades\DB;
 use App\Models\Produk;
 use App\Models\Provinsi;
 use App\Models\Cart;
+use App\Models\Checkout;
+
 
 
 class ClientProdukController extends Controller
 {
 	function home(){
-		$data['list_produk'] = Produk::paginate(8);
+		$data['list_produk'] = Produk::paginate(4);
 		return view('customer.home', $data);
 	}
 
@@ -37,8 +39,9 @@ class ClientProdukController extends Controller
 		$nama = request('nama');
 		$data['list_produk'] = Produk::where('nama_produk', 'like', "%$nama%")->get();
 		$data['nama'] = $nama;
-		return view('customer.home', $data);
-		//dd(request()->all());
+
+		// dd(request()->all());
+		return view('customer.produk', $data);
 	}
     function cart(){
 		$data['list_cart'] = Cart::all();
@@ -61,5 +64,27 @@ class ClientProdukController extends Controller
 
 		return redirect('admin/produk')->with('success','Data Berhasil Ditambahkan');
 		// dd(request()->all());
+	}
+
+	function Produk(){
+		$data['list_produk'] = Produk::all();
+		return view('customer.produk', $data);
+	}
+
+	function checkout(){
+		return view('customer.checkout');
+	}
+
+	function postcheckout(){
+		$produk = new Checkout;
+		$produk->firtname = request('firtname');
+		$produk->lastname = request('lastname');
+		$produk->address = request('address');
+		$produk->phone = request('phone');
+		$produk->email = request('email');
+		// dd(request()->all());
+		$produk->save();
+
+		return redirect('cart');
 	}
 }

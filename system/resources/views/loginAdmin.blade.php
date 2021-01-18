@@ -21,7 +21,7 @@
 <body class="hold-transition login-page">
 <div class="login-box">
   <div class="login-logo">
-    <a href="{{url('template')}}"><b>TOKOPAK</b>widi</a>
+    <a href="{{url('template')}}"><b>Wida</b> Mantolo</a>
   </div>
   <!-- /.login-logo -->
   <div class="card">
